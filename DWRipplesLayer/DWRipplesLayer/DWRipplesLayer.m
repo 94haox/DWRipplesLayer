@@ -53,7 +53,7 @@
 #pragma mark - Private Methods
 
 - (void)setUp{
-//  self.backgroundColor = [UIColor greenColor].CGColor;
+
   self.roundLayer.backgroundColor = [[UIColor greenColor] CGColor];
   
   self.radius = 60;
@@ -72,8 +72,9 @@
   self.ripplesAnimationGroup.duration = self.animationDuration;
   self.ripplesAnimationGroup.repeatCount = self.repeatCount;
   
-  CAMediaTimingFunction *defaultCurve = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
-  self.ripplesAnimationGroup.timingFunction = defaultCurve;
+  // 动画曲线，使用默认
+  self.ripplesAnimationGroup.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];;
+  
   // 圆圈放大
   CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.xy"];
   scaleAnimation.fromValue = @(self.fromValueForRadius);

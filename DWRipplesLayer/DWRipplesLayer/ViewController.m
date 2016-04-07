@@ -25,7 +25,7 @@
   
   self.frontView = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 30, 30)];
   self.frontView.backgroundColor = [UIColor grayColor];
-  [self.view addSubview:_frontView];
+  [self.view addSubview:self.frontView];
   
   self.ripplesLayer = [[DWRipplesLayer alloc] init];
   [self.view.layer insertSublayer:self.ripplesLayer below:self.frontView.layer];
@@ -33,7 +33,7 @@
   
   [self.ripplesLayer startAnimation];
   
-  
+
   // Do any additional setup after loading the view, typically from a nib.
 }
 
